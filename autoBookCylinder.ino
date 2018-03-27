@@ -4,7 +4,7 @@
 #define BUZ  7                                        //to connect the buzzer negetive pin to digitalpin 7 of arduino
 float val=0;                                          //creating a float variable
 long  cnt=0,smp=0;                                    //creating a long variable
-String str="Book a cylinder\nID:12345\nSneha\n2-24\nkukatpally\nhyderabad\n500011";//message to be sent to distributor
+String str="********";                                //message to be sent to distributor
 LiquidCrystal lcd(9, 8, 13, 12, 11, 10);              //to connect 16x2 display pins to the Arduino pins
 
 void setup()                                          //one time execution code will be placed here                                           
@@ -49,7 +49,7 @@ void loop()                                           //which runs forever
   lcd.print("booking cylinder");                      //prints on the screen
   Serial.println("AT+CMGF=1");                        //command to set GSM module in text mode 
   delay(1000);                                        //wait for a second
-  Serial.println("AT+CMGS=\"07675819192\"\r");        //command to send message to that number
+  Serial.println("AT+CMGS=\"+91**********\"\r");      //command to send message to that number
   delay(1000);
   Serial.println(str);                                //print the message contained string
   digitalWrite(BUZ, LOW);                             //buzzer active
@@ -162,7 +162,7 @@ void calibrate()                                         // calibrates the weigi
    
   }
   val=val/100.0;
-  val=val/240.0;                                       // put here your calibrating weight
+  val=val/240.0;                                       // put here your calibrating weight in grams
   lcd.clear();
   digitalWrite(BUZ, LOW);
   delay(150);
