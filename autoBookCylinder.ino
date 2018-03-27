@@ -1,3 +1,4 @@
+//code Written for Arduino UNO by praveen kumar
 #include <LiquidCrystal.h>                            //16x2 lcd hedder file                       
 #define DT  A5                                        //to connect DAT pin of Hx117 module to A5 of Arduino
 #define SCK A4                                        //to connect SCk pin of Hx117 module to A4 of Arduino   
